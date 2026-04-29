@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Cafe L'Amour</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0A0A0A;
+            --bg-card: #141414;
+            --bg-card-hover: #1A1A1A;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --text-main: #FFFFFF;
+            --text-muted: #888888;
+            --border: rgba(255, 255, 255, 0.08);
+
+            --status-new: #3b82f6;
+            --status-cooking: #eab308;
+            --status-delivered: #22c55e;
+            --status-deleted: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .admin-header {
+            background-color: #000;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--status-delivered);
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(34, 197, 94, 0.1);
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--status-delivered);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+
+        /* Controls */
+        .controls-bar {
+            padding: 20px 30px;
+            display: flex;
+            gap: 20px;
+            background: linear-gradient(180deg, #050505 0%, var(--bg-dark) 100%);
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 12px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            color: white;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        /* Orders Grid */
+        .orders-container {
+            padding: 0 30px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .order-card {
+            background-color: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            animation: slideIn 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .order-card:hover {
+            border-color: rgba(212, 175, 55, 0.2);
+            background-color: var(--bg-card-hover);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .table-num {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .order-time {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .status-new-badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--status-new);
+            border: 1px solid var(--status-new);
+        }
+
+        .status-cooking-badge {
+            background: rgba(234, 179, 8, 0.1);
+            color: var(--status-cooking);
+            border: 1px solid var(--status-cooking);
+        }
+
+        .status-delivered-badge {
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--status-delivered);
+            border: 1px solid var(--status-delivered);
+        }
+
+        .items-list {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .order-item-qty {
+            color: var(--gold-light);
+            font-weight: 600;
+            width: 30px;
+        }
+
+        .comment-box {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .total-row span:last-child {
+            color: var(--gold);
+        }
+
+        /* Actions */
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-status {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        .btn-status:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-delete {
+            flex: 0 0 auto;
+            width: 40px;
+            background-color: rgba(239, 68, 68, 0.1);
+            color: var(--status-deleted);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-delete:hover {
+            background-color: rgba(239, 68, 68, 0.2);
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="brand">🤝 IKKI DO'ST ADMIN</div>
+        <div class="live-indicator">
+            <span class="dot"></span> Live Updates
+        </div>
+    </header>
+
+    <div class="controls-bar">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Stol raqami bo'yicha qidirish...">
+        </div>
+    </div>
+
+    <main class="orders-container" id="ordersGrid">
+        <!-- Orders will render here -->
+    </main>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:3000/api/admin';
+        let ordersData = [];
+        let searchTerm = '';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchOrders();
+            // Live update every 5 seconds
+            setInterval(fetchOrders, 5000);
+
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                searchTerm = e.target.value.trim().toLowerCase();
+                renderOrders();
+            });
+        });
+
+        async function fetchOrders() {
+            try {
+                const res = await fetch(`${API_BASE_URL}/orders`);
+                const data = await res.json();
+                if (data.success) {
+                    // Check if anything changed so we don't re-render unnecessarily if possible
+                    // But for simplicity, we just assign and render
+                    ordersData = data.data;
+                    renderOrders();
+                }
+            } catch (err) {
+                console.error("Xatolik:", err);
+            }
+        }
+
+        async function updateStatus(id, newStatus) {
+            try {
+                const res = await fetch(`${API_BASE_URL}/orders/${id}/status`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ status: newStatus })
+                });
+                if (res.ok) fetchOrders(); // refresh
+            } catch (err) {
+                alert("Holatni yangilashda xatolik yuz berdi");
+            }
+        }
+
+        async function deleteOrder(id) {
+            if (!confirm("Haqiqatan ham o'chirmoqchimisiz?")) return;
+            try {
+                const res = await fetch(`${API_BASE_URL}/orders/${id}`, { method: 'DELETE' });
+                if (res.ok) fetchOrders(); // refresh
+            } catch (err) {
+                alert("O'chirishda xatolik yuz berdi");
+            }
+        }
+
+        function renderOrders() {
+            const grid = document.getElementById('ordersGrid');
+            grid.innerHTML = '';
+
+            const filteredOrders = ordersData.filter(o => {
+                if (!searchTerm) return true;
+                return o.tableNumber.toString().toLowerCase().includes(searchTerm);
+            });
+
+            if (filteredOrders.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <h3>Buyurtmalar topilmadi</h3>
+                        <p>Hozircha yangi buyurtmalar kelib tushmagan.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredOrders.forEach(order => {
+                const time = new Date(order.timestamp).toLocaleTimeString('uz-UZ', { hour: '2-digit', minute: '2-digit' });
+                const card = document.createElement('div');
+                card.className = 'order-card';
+
+                // Status badge
+                let statusBadge = '';
+                let actionBtn1 = '';
+                let actionBtn2 = '<button class="btn btn-delete" onclick="deleteOrder(' + order.id + ')" title="O\'chirish">🗑</button>';
+
+                if (order.status === 'new') {
+                    statusBadge = '<span class="status-badge status-new-badge">Yangi</span>';
+                    actionBtn1 = `<button class="btn btn-status" style="color: var(--status-cooking); border-color: var(--status-cooking);" onclick="updateStatus(${order.id}, 'cooking')">👨‍🍳 Tayyorlash</button>`;
+                } else if (order.status === 'cooking') {
+                    statusBadge = '<span class="status-badge status-cooking-badge">Tayyorlanmoqda</span>';
+                    actionBtn1 = `<button class="btn btn-status" style="color: var(--status-delivered); border-color: var(--status-delivered);" onclick="updateStatus(${order.id}, 'delivered')">✅ Yetkazildi</button>`;
+                } else if (order.status === 'delivered') {
+                    statusBadge = '<span class="status-badge status-delivered-badge">Yetkazildi</span>';
+                    actionBtn1 = `<button class="btn btn-status" disabled style="opacity: 0.5;">Tugallangan</button>`;
+                }
+
+                // Format items
+                let itemsListHtml = '';
+                order.items.forEach(item => {
+                    itemsListHtml += `
+                        <div class="order-item">
+                            <div><span class="order-item-qty">${item.quantity}x</span> ${item.name}</div>
+                            <div>${item.price.toLocaleString()} s.</div>
+                        </div>
+                    `;
+                });
+
+                let commentHtml = '';
+                if (order.comment && order.comment.trim() !== '') {
+                    commentHtml = `<div class="comment-box">📝 ${order.comment}</div>`;
+                }
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div>
+                            <div class="table-num">Stol ${order.tableNumber}</div>
+                            <div class="order-time">🕒 ${time} • ID: ${order.id}</div>
+                        </div>
+                        <div>${statusBadge}</div>
+                    </div>
+                    
+                    <div class="items-list">
+                        ${itemsListHtml}
+                    </div>
+                    
+                    ${commentHtml}
+
+                    <div class="total-row">
+                        <span>Jami</span>
+                        <span>${order.totalAmount.toLocaleString()} so'm</span>
+                    </div>
+
+                    <div class="actions">
+                        ${actionBtn1}
+                        ${actionBtn2}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Ikki Do'st rasmiy menyusi. Barcha premium ovqatlar va haqiqiy shashliklar.">
+    <title>Menyu - Ikki Do'st</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <h1 class="header-brand">IKKI DO'ST</h1>
+            <div class="table-badge">Stol: <span id="displayTableNumber">-</span></div>
+        </div>
+        <div class="categories-wrapper">
+            <div class="categories-scroll" id="categoriesContainer">
+                <button class="category-btn active" data-category="all">Barchasi</button>
+                <button class="category-btn" data-category="Bluda">Bluda</button>
+                <button class="category-btn" data-category="Zakuska">Zakuska</button>
+                <button class="category-btn" data-category="Ichimliklar">Ichimliklar</button>
+                <button class="category-btn" data-category="Extra">Extra</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="menu-container pb-100">
+        <div id="loader" class="loader-container">
+            <div class="spinner"></div>
+            <p>Menyu yuklanmoqda...</p>
+        </div>
+
+        <div id="menuGrid" class="menu-grid" style="display: none;">
+            <!-- Menu items will be injected here via JS -->
+        </div>
+    </main>
+
+    <!-- Floating Cart Button -->
+    <button id="floatingCartBtn" class="floating-cart-btn" style="display: none;">
+        <div class="cart-info">
+            <i class="icon-cart">🛒</i>
+            <span id="cartCount" class="badge">0</span>
+        </div>
+        <span id="cartTotalSum">0 so'm</span>
+    </button>
+
+    <!-- Cart Bottom Sheet -->
+    <div id="cartOverlay" class="cart-overlay"></div>
+    <div id="cartSheet" class="cart-sheet">
+        <div class="cart-header">
+            <div>
+                <h3>Sizning buyurtmangiz</h3>
+                <span id="clearCartBtn"
+                    style="color: #f44336; font-size: 0.85rem; cursor: pointer; margin-top: 5px; display: inline-block;">Savatchani
+                    tozalash</span>
+            </div>
+            <button id="closeCartBtn" class="close-btn">×</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Cart items will be injected here -->
+        </div>
+
+        <div class="cart-summary">
+            <div class="input-group mb-15">
+                <label for="orderComment">Qo'shimcha izoh (ixtiyoriy)</label>
+                <input type="text" id="orderComment" placeholder="Masalan: Qahva sovuq bo'lmasin">
+            </div>
+            <div class="summary-row total">
+                <span>Jami summa:</span>
+                <span id="sheetCartTotal">0 so'm</span>
+            </div>
+            <button id="checkoutBtn" class="btn btn-primary btn-block">Buyurtma berish</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

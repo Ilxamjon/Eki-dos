@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muvaffaqiyatli - Cafe L'Amour</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="success-page">
+    <div class="success-container">
+        <div class="success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+        </div>
+        <h1 class="success-title">Buyurtma qabul qilindi!</h1>
+        <p class="success-text">Sizning buyurtmangiz ofitsiantga yuborildi. Tez orada tayyor bo'ladi.</p>
+
+        <div class="success-details">
+            <div class="detail-row">
+                <span>Buyurtma raqami:</span>
+                <strong id="orderIdDisplay">#---</strong>
+            </div>
+            <div class="detail-row">
+                <span>Stol:</span>
+                <strong id="tableIdDisplay">---</strong>
+            </div>
+        </div>
+
+        <a href="menu.html" class="btn btn-primary btn-block">Yana buyurtma berish</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tableNum = localStorage.getItem('qr_table_number');
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('id') || Math.floor(1000 + Math.random() * 9000);
+
+            document.getElementById('tableIdDisplay').textContent = tableNum || '-';
+            document.getElementById('orderIdDisplay').textContent = '#' + orderId;
+        });
+    </script>
+</body>
+
+</html>
