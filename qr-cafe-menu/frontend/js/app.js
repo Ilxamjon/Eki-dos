@@ -84,21 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Menu Page Handling
     if (document.getElementById('menuGrid')) {
-        const storedTable = localStorage.getItem('qr_table_number');
-        if (!storedTable) {
-            // Agar QR parametri bo'lmasa ham, menyuda qolamiz va stolni shu yerning o'zida so'raymiz.
-            const input = prompt('Stol raqamini kiriting (1 - 30):');
-            const tableNum = parseInt(input || '', 10);
-            if (tableNum && tableNum >= 1 && tableNum <= 30) {
-                localStorage.setItem('qr_table_number', tableNum);
-            } else {
-                showToast('Stol raqami topilmadi. QR kod orqali kiring.', 'error');
-                document.getElementById('loader').style.display = 'none';
-                document.getElementById('menuGrid').style.display = 'grid';
-                return;
-            }
-        }
-
         loadMenu();
         setupCategoryFilters();
     }
@@ -115,15 +100,12 @@ async function loadMenu() {
                 image_url: normalizeImageUrl(item)
             }));
             renderMenu('all');
-        } else {
-            showToast('Menyuni yuklashda xatolik', 'error');
         }
     } catch (err) {
         console.error('Fetch error:', err);
         // Fallback mock data if server is down (for demo purposes)
         menuItems = getMockMenu().map((item) => ({ ...item, image_url: normalizeImageUrl(item) }));
         renderMenu('all');
-        showToast('Serverga ulanib bo\'lmadi. Namuna menyu ko\'rsatilmoqda.', 'error');
     } finally {
         document.getElementById('loader').style.display = 'none';
         document.getElementById('menuGrid').style.display = 'grid';
