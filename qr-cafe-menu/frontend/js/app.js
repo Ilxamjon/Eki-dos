@@ -165,7 +165,7 @@ function setupCategoryScrollArrows() {
     const rightBtn = document.querySelector('.cat-arrow-right');
     if (!leftBtn || !rightBtn) return;
 
-    // Always start from the beginning so "Barchasi" is visible.
+    // Always start from the beginning.
     scroller.scrollLeft = 0;
 
     const updateDisabled = () => {
