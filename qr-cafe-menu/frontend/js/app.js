@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('menuGrid')) {
         loadMenu();
         setupCategoryFilters();
+        setupCategoryScrollArrows();
     }
 });
 
@@ -154,6 +155,36 @@ function setupCategoryFilters() {
             renderMenu(e.target.dataset.category);
         });
     });
+}
+
+function setupCategoryScrollArrows() {
+    const scroller = document.getElementById('categoriesContainer');
+    if (!scroller) return;
+
+    const leftBtn = document.querySelector('.cat-arrow-left');
+    const rightBtn = document.querySelector('.cat-arrow-right');
+    if (!leftBtn || !rightBtn) return;
+
+    // Always start from the beginning so "Barchasi" is visible.
+    scroller.scrollLeft = 0;
+
+    const updateDisabled = () => {
+        const max = scroller.scrollWidth - scroller.clientWidth;
+        leftBtn.disabled = scroller.scrollLeft <= 2;
+        rightBtn.disabled = scroller.scrollLeft >= max - 2;
+    };
+
+    const scrollByStep = (dir) => {
+        const step = Math.max(220, Math.floor(scroller.clientWidth * 0.6));
+        scroller.scrollBy({ left: dir * step, behavior: 'smooth' });
+    };
+
+    leftBtn.addEventListener('click', () => scrollByStep(-1));
+    rightBtn.addEventListener('click', () => scrollByStep(1));
+    scroller.addEventListener('scroll', updateDisabled, { passive: true });
+    window.addEventListener('resize', updateDisabled);
+
+    updateDisabled();
 }
 
 // Utils
