@@ -13,7 +13,7 @@ const fetch = require('node-fetch');
 const outDir = path.join(__dirname, '../../frontend/assets/images/items');
 
 const items = [
-  { id: 1, name: 'Balyk Kuyrdak', slug: 'balyk-kuyrdak', query: 'fish potato skillet dish' },
+  { id: 1, name: 'Balıq quwirdaq', slug: 'balyk-kuyrdak', query: 'fish potato skillet dish' },
   { id: 2, name: 'Shashlik', slug: 'shashlik', query: 'shashlik kebab skewers grilled meat' },
   { id: 3, name: 'Pigodi', slug: 'pigodi', query: 'korean steamed bun' },
   { id: 4, name: 'Pirojki', slug: 'pirojki', query: 'pirozhki pastry' },
@@ -37,7 +37,7 @@ const items = [
   { id: 20, name: 'Mineral 1.5L', slug: 'mineral-15l', query: 'mineral water bottle' },
   { id: 21, name: 'Mineral 1L', slug: 'mineral-1l', query: 'water bottle' },
 
-  { id: 22, name: 'Kapchyonny Balyk', slug: 'kapchyonny-balyk', query: 'smoked fish plate' },
+  { id: 22, name: 'Kapchonnıy Balıq', slug: 'kapchyonny-balyk', query: 'smoked fish plate' },
   { id: 23, name: 'Zakrytii Vobla', slug: 'zakrytii-vobla', query: 'dried fish snack' }
 ];
 

@@ -8,7 +8,7 @@ const path = require('path');
 const outDir = path.join(__dirname, '../../frontend/assets/images');
 
 const items = [
-  { id: 1, category: 'Bluda', name: 'Balyk Kuyrdak', price: 45000, file: 'balyk-kuyrdak.svg' },
+  { id: 1, category: 'Bluda', name: 'Balıq quwirdaq', price: 45000, file: 'balyk-kuyrdak.svg' },
   { id: 2, category: 'Bluda', name: 'Shashlik', price: 13000, file: 'shashlik.svg' },
   { id: 3, category: 'Bluda', name: 'Pigodi', price: 8000, file: 'pigodi.svg' },
   { id: 4, category: 'Bluda', name: 'Pirojki', price: 3000, file: 'pirojki.svg' },
@@ -32,7 +32,7 @@ const items = [
   { id: 20, category: 'Ichimliklar', name: 'Mineral 1.5L', price: 8000, file: 'mineral-15l.svg' },
   { id: 21, category: 'Ichimliklar', name: 'Mineral 1L', price: 6000, file: 'mineral-1l.svg' },
 
-  { id: 22, category: 'Extra', name: 'Kapchyonny Balyk', price: 30000, file: 'kapchyonny-balyk.svg' },
+  { id: 22, category: 'Extra', name: 'Kapchonnıy Balıq', price: 30000, file: 'kapchyonny-balyk.svg' },
   { id: 23, category: 'Extra', name: 'Zakrytii Vobla', price: 30000, file: 'zakrytii-vobla.svg' }
 ];
 

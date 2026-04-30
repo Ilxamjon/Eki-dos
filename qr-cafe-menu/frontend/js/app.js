@@ -208,7 +208,7 @@ function showToast(message, type = 'success') {
 // Mock Menu exactly as backend for local dev
 function getMockMenu() {
     return [
-        { id: 1, category: 'Bluda', name: 'Balyk Kuyrdak', description: 'Tandirda pishirilgan maxsus baliq va kartoshka', price: 45000, image_url: 'assets/images/balyk-kuyrdak.svg' },
+        { id: 1, category: 'Bluda', name: 'Balıq quwirdaq', description: 'Tandirda pishirilgan maxsus baliq va kartoshka', price: 45000, image_url: 'assets/images/balyk-kuyrdak.svg' },
         { id: 2, category: 'Bluda', name: 'Shashlik', description: 'Barra go\'shtdan tayyorlangan mazzali shashlik', price: 13000, image_url: 'assets/images/shashlik.svg' },
         { id: 3, category: 'Bluda', name: 'Pigodi', description: 'Bug\'da pishgan koreyscha manti', price: 8000, image_url: 'assets/images/pigodi.svg' },
         { id: 4, category: 'Bluda', name: 'Pirojki', description: 'Issiqqina va qarsildoq pirojkilar', price: 3000, image_url: 'assets/images/pirojki.svg' },
@@ -232,7 +232,7 @@ function getMockMenu() {
         { id: 20, category: 'Ichimliklar', name: 'Mineral 1.5L', description: 'Gazli mineral suv 1.5L', price: 8000, image_url: 'assets/images/mineral-15l.svg' },
         { id: 21, category: 'Ichimliklar', name: 'Mineral 1L', description: 'Gazsiz mineral suv 1L', price: 6000, image_url: 'assets/images/mineral-1l.svg' },
 
-        { id: 22, category: 'Extra', name: 'Kapchyonny Balyk', description: 'Dudlangan maxsus baliq', price: 30000, image_url: 'assets/images/kapchyonny-balyk.svg' },
+        { id: 22, category: 'Extra', name: 'Kapchonnıy Balıq', description: 'Dudlangan maxsus baliq', price: 30000, image_url: 'assets/images/kapchyonny-balyk.svg' },
         { id: 23, category: 'Extra', name: 'Zakrytii Vobla', description: 'Tozalangan quritilgan vobla', price: 30000, image_url: 'assets/images/zakrytii-vobla.svg' }
     ];
 }
