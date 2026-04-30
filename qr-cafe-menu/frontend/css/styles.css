@@ -11,9 +11,10 @@
     --gold-dark: #C25B00;
     /* Deep Rust */
 
-    --bg-black: #000000;
-    --bg-card: #0A0A0A;
-    --bg-card-hover: #141414;
+    /* Warm dark background (appetizing) */
+    --bg-black: #070403;
+    --bg-card: rgba(12, 8, 6, 0.88);
+    --bg-card-hover: rgba(18, 12, 9, 0.92);
 
     --text-white: #FFFFFF;
     --text-silver: #C0C0C0;
@@ -44,10 +45,34 @@
 body {
     font-family: var(--font-body);
     background-color: var(--bg-black);
+    background-image:
+        radial-gradient(1200px 600px at 20% 0%, rgba(255, 123, 0, 0.18) 0%, rgba(255, 123, 0, 0) 55%),
+        radial-gradient(900px 500px at 85% 15%, rgba(255, 158, 74, 0.12) 0%, rgba(255, 158, 74, 0) 60%),
+        radial-gradient(800px 500px at 40% 110%, rgba(194, 91, 0, 0.10) 0%, rgba(194, 91, 0, 0) 55%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(7, 4, 3, 1) 55%, rgba(0, 0, 0, 0.75) 100%);
+    background-attachment: fixed;
     color: var(--text-white);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+}
+
+/* Menu background photo (subtle, appetite-style) */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.55) 35%, rgba(0, 0, 0, 0.82) 100%),
+        url('../assets/images/hero-menu.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) saturate(1.05) contrast(1.05);
+    transform: scale(1.02);
+    opacity: 0.55;
+    z-index: -1;
+    pointer-events: none;
 }
 
 h1,
@@ -61,7 +86,7 @@ h4 {
 }
 
 .pb-100 {
-    padding-bottom: 110px;
+    padding-bottom: 20px;
 }
 
 .mb-15 {
@@ -214,7 +239,7 @@ h4 {
 
 .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
@@ -249,6 +274,7 @@ h4 {
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
+    justify-content: center;
 }
 
 .categories-scroll::-webkit-scrollbar {
@@ -298,7 +324,9 @@ h4 {
 }
 
 .menu-item {
-    background-color: var(--bg-card);
+    background:
+        radial-gradient(120% 140% at 10% 0%, rgba(255, 123, 0, 0.08) 0%, rgba(255, 123, 0, 0) 55%),
+        var(--bg-card);
     border-radius: var(--border-radius);
     overflow: hidden;
     display: flex;
@@ -323,13 +351,15 @@ h4 {
 }
 
 .item-img {
-    width: 110px;
-    height: 110px;
-    border-radius: 16px;
-    object-fit: cover;
-    background-color: #111;
+    width: 150px;
+    height: 150px;
+    border-radius: 18px;
+    object-fit: contain;
+    object-position: center;
+    background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: transform 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
 }
 
 .menu-item:hover .item-img {
@@ -377,18 +407,22 @@ h4 {
 }
 
 .add-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
+    width: auto;
+    min-width: 74px;
+    height: 38px;
+    padding: 0 14px;
+    border-radius: 999px;
     background-color: rgba(212, 175, 55, 0.1);
     color: var(--gold-primary);
     border: 1px solid var(--gold-primary);
-    font-size: 1.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: var(--transition-smooth);
+    white-space: nowrap;
 }
 
 .add-btn:active {
@@ -409,19 +443,22 @@ h4 {
 }
 
 .qty-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    width: auto;
+    min-width: 38px;
+    height: 34px;
+    padding: 0 10px;
+    border-radius: 999px;
     border: none;
     background-color: #1A1A1A;
     color: var(--gold-primary);
-    font-size: 1.4rem;
-    font-weight: 300;
+    font-size: 0.95rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s;
+    white-space: nowrap;
 }
 
 .qty-btn:active {

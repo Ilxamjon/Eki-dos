@@ -17,7 +17,6 @@
     <header class="app-header">
         <div class="header-content">
             <h1 class="header-brand">IKKI DO'ST</h1>
-            <div class="table-badge">Stol: <span id="displayTableNumber">-</span></div>
         </div>
         <div class="categories-wrapper">
             <div class="categories-scroll" id="categoriesContainer">
@@ -40,44 +39,6 @@
             <!-- Menu items will be injected here via JS -->
         </div>
     </main>
-
-    <!-- Floating Cart Button -->
-    <button id="floatingCartBtn" class="floating-cart-btn" style="display: none;">
-        <div class="cart-info">
-            <i class="icon-cart">🛒</i>
-            <span id="cartCount" class="badge">0</span>
-        </div>
-        <span id="cartTotalSum">0 so'm</span>
-    </button>
-
-    <!-- Cart Bottom Sheet -->
-    <div id="cartOverlay" class="cart-overlay"></div>
-    <div id="cartSheet" class="cart-sheet">
-        <div class="cart-header">
-            <div>
-                <h3>Sizning buyurtmangiz</h3>
-                <span id="clearCartBtn"
-                    style="color: #f44336; font-size: 0.85rem; cursor: pointer; margin-top: 5px; display: inline-block;">Savatchani
-                    tozalash</span>
-            </div>
-            <button id="closeCartBtn" class="close-btn">×</button>
-        </div>
-        <div class="cart-items" id="cartItemsContainer">
-            <!-- Cart items will be injected here -->
-        </div>
-
-        <div class="cart-summary">
-            <div class="input-group mb-15">
-                <label for="orderComment">Qo'shimcha izoh (ixtiyoriy)</label>
-                <input type="text" id="orderComment" placeholder="Masalan: Qahva sovuq bo'lmasin">
-            </div>
-            <div class="summary-row total">
-                <span>Jami summa:</span>
-                <span id="sheetCartTotal">0 so'm</span>
-            </div>
-            <button id="checkoutBtn" class="btn btn-primary btn-block">Buyurtma berish</button>
-        </div>
-    </div>
 
     <!-- Toast Notification -->
     <div id="toast" class="toast"></div>

@@ -2,7 +2,11 @@ const QRCode = require('qrcode');
 const fs = require('fs');
 const path = require('path');
 
-const baseUrl = 'https://site.com/?table='; // Replace with the real domain later
+// QR skan qilinganda ochiladigan menu URL.
+// LOCAL misol: Live Server `frontend/` ichida bo'lsa, u odatda http://localhost:5500/menu.html bo'ladi.
+const baseOrigin = (process.env.PUBLIC_URL || process.env.BASE_URL || 'http://localhost:5500').replace(/\/$/, '');
+const menuPath = process.env.QR_MENU_PATH || 'menu.html';
+const baseUrl = `${baseOrigin}/${menuPath}?table=`;
 const outDir = path.join(__dirname, '../../../frontend/assets/qrcodes');
 
 if (!fs.existsSync(outDir)) {
