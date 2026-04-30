@@ -64,15 +64,21 @@ body::before {
     position: fixed;
     inset: 0;
     background-image:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.55) 35%, rgba(0, 0, 0, 0.82) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.30) 35%, rgba(0, 0, 0, 0.55) 100%),
         url('../assets/images/hero-menu.jpg');
     background-size: cover;
     background-position: center;
-    filter: blur(2px) saturate(1.05) contrast(1.05);
+    filter: blur(1px) saturate(1.15) contrast(1.1);
     transform: scale(1.02);
-    opacity: 0.55;
-    z-index: -1;
+    opacity: 0.82;
+    z-index: 0;
     pointer-events: none;
+}
+
+/* Ensure content stays above background photo */
+body > * {
+    position: relative;
+    z-index: 1;
 }
 
 h1,
