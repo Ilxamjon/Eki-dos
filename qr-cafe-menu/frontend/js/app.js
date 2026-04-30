@@ -233,7 +233,7 @@ function getMockMenu() {
         { id: 19, category: 'Ichimliklar', name: 'Cola 1.5L', description: '', price: 18000, image_url: 'assets/images/cola-15l.svg' },
         { id: 20, category: 'Ichimliklar', name: 'Mineral 1.5L', description: '', price: 7000, image_url: 'assets/images/mineral-15l.svg' },
         { id: 21, category: 'Ichimliklar', name: 'Mineral 1L', description: '', price: 5000, image_url: 'assets/images/mineral-1l.svg' },
-        { id: 24, category: 'Ichimliklar', name: 'Gazli ayron', description: '', price: 15000, image_url: 'assets/images/gazli-ayron.jpg' },
+        { id: 24, category: 'Ichimliklar', name: 'Gazli ayron', description: '', price: 15000, image_url: 'assets/images/gazli-ayron-v2.jpg' },
 
         { id: 22, category: 'Extra', name: 'Kapchonnıy Balıq', description: '', price: 30000, image_url: 'assets/images/kapchyonny-balyk.svg' },
         { id: 23, category: 'Extra', name: 'Zakrytii Vobla', description: '', price: 30000, image_url: 'assets/images/zakrytii-vobla.svg' }
