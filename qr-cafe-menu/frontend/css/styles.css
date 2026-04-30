@@ -254,6 +254,8 @@ h4 {
     background-clip: text;
     color: transparent;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    text-align: center;
 }
 
 .table-badge {
