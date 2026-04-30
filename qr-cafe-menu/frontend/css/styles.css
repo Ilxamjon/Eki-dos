@@ -270,10 +270,6 @@ h4 {
     gap: 10px;
 }
 
-.cat-all {
-    flex: 0 0 auto;
-}
-
 .categories-scroll {
     display: flex;
     overflow-x: auto;
