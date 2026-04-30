@@ -20,7 +20,8 @@ const itemPhotoById = {
     15: 'assets/images/pivo-razlivnoy.jpg',
     17: 'assets/images/pivo-sarbast-light.jpg',
     19: 'assets/images/cola-15l.jpg',
-    20: 'assets/images/mineral-15l.jpg'
+    20: 'assets/images/mineral-15l.jpg',
+    26: 'assets/images/farsh-1kg.jpg'
 };
 
 // "Haqiqiy rasm" uchun kategoriya bo'yicha foto (lokal).
@@ -214,6 +215,7 @@ function getMockMenu() {
         { id: 4, category: 'Bluda', name: 'Pirojki', description: 'Issiqqina va qarsildoq pirojkilar', price: 3000, image_url: 'assets/images/pirojki.svg' },
         { id: 5, category: 'Bluda', name: 'Pisken Mayek', description: 'Maxsus usulda pishirilgan tuxum', price: 2000, image_url: 'assets/images/pisken-mayek.svg' },
         { id: 6, category: 'Bluda', name: 'Somsa', description: 'Guzali tandir somsa', price: 7000, image_url: 'assets/images/somsa.svg' },
+        { id: 26, category: 'Bluda', name: 'Farsh 1 kg', description: 'Farsh 1 kg', price: 140000, image_url: 'assets/images/farsh-1kg.jpg' },
 
         { id: 7, category: 'Zakuska', name: 'Svejiy Salat', description: 'Yangi sabzavotlardan tayyorlangan salat', price: 10000, image_url: 'assets/images/svejiy-salat.svg' },
         { id: 8, category: 'Zakuska', name: 'Markovcha', description: 'Achchiqqina koreyscha sabzi salati', price: 5000, image_url: 'assets/images/markovcha.svg' },
