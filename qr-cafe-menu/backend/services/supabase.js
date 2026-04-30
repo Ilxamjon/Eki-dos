@@ -76,14 +76,16 @@ function getMockMenu() {
         { id: 12, category: 'Zakuska', name: 'Turak', description: 'Qovurilgan xamirli gazaklar', price: 5000, image_url: 'assets/images/turak.svg' },
         { id: 13, category: 'Zakuska', name: 'Semechka Katta', description: 'Katta paket semechka', price: 15000, image_url: 'assets/images/semechka-katta.svg' },
         { id: 14, category: 'Zakuska', name: 'Semechka Mini', description: 'Kichik paket semechka', price: 5000, image_url: 'assets/images/semechka-mini.svg' },
+        { id: 25, category: 'Zakuska', name: 'Baliq Xe', description: 'Baliq Xe', price: 10000, image_url: 'assets/images/opke-xe.svg' },
 
         { id: 15, category: 'Ichimliklar', name: 'Pivo Razlivnoy', description: 'Muzdek razlivnoy pivo', price: 10000, image_url: 'assets/images/pivo-razlivnoy.svg' },
         { id: 16, category: 'Ichimliklar', name: 'Pivo Kibray', description: 'Kibray pivosi (shisha)', price: 20000, image_url: 'assets/images/pivo-kibray.svg' },
         { id: 17, category: 'Ichimliklar', name: 'Pivo Sarbast Light', description: 'Sarbast Light (shisha)', price: 25000, image_url: 'assets/images/pivo-sarbast-light.svg' },
         { id: 18, category: 'Ichimliklar', name: 'Cola 1L', description: 'Coca-Cola 1 litr', price: 15000, image_url: 'assets/images/cola-1l.svg' },
         { id: 19, category: 'Ichimliklar', name: 'Cola 1.5L', description: 'Coca-Cola 1.5 litr', price: 18000, image_url: 'assets/images/cola-15l.svg' },
-        { id: 20, category: 'Ichimliklar', name: 'Mineral 1.5L', description: 'Gazli mineral suv 1.5L', price: 8000, image_url: 'assets/images/mineral-15l.svg' },
-        { id: 21, category: 'Ichimliklar', name: 'Mineral 1L', description: 'Gazsiz mineral suv 1L', price: 6000, image_url: 'assets/images/mineral-1l.svg' },
+        { id: 20, category: 'Ichimliklar', name: 'Mineral 1.5L', description: 'Gazli mineral suv 1.5L', price: 7000, image_url: 'assets/images/mineral-15l.svg' },
+        { id: 21, category: 'Ichimliklar', name: 'Mineral 1L', description: 'Gazsiz mineral suv 1L', price: 5000, image_url: 'assets/images/mineral-1l.svg' },
+        { id: 24, category: 'Ichimliklar', name: 'Gazli ayron', description: 'Gazli ayron', price: 15000, image_url: 'assets/images/mineral-1l.svg' },
 
         { id: 22, category: 'Extra', name: 'Kapchonnıy Balıq', description: 'Dudlangan maxsus baliq', price: 30000, image_url: 'assets/images/kapchyonny-balyk.svg' },
         { id: 23, category: 'Extra', name: 'Zakrytii Vobla', description: 'Tozalangan quritilgan vobla', price: 30000, image_url: 'assets/images/zakrytii-vobla.svg' }
