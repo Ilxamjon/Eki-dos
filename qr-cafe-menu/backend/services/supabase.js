@@ -61,35 +61,35 @@ const saveOrder = async (orderData) => {
 // Mock data for development when Supabase isn't configured
 function getMockMenu() {
     return [
-        { id: 1, category: 'Bluda', name: 'Balıq quwirdaq', description: 'Tandirda pishirilgan maxsus baliq va kartoshka', price: 45000, image_url: 'assets/images/balyk-kuyrdak.svg' },
-        { id: 2, category: 'Bluda', name: 'Shashlik', description: 'Barra go\'shtdan tayyorlangan mazzali shashlik', price: 13000, image_url: 'assets/images/shashlik.svg' },
-        { id: 3, category: 'Bluda', name: 'Pigodi', description: 'Bug\'da pishgan koreyscha manti', price: 8000, image_url: 'assets/images/pigodi.svg' },
-        { id: 4, category: 'Bluda', name: 'Pirojki', description: 'Issiqqina va qarsildoq pirojkilar', price: 3000, image_url: 'assets/images/pirojki.svg' },
-        { id: 5, category: 'Bluda', name: 'Pisken Mayek', description: 'Maxsus usulda pishirilgan tuxum', price: 2000, image_url: 'assets/images/pisken-mayek.svg' },
-        { id: 6, category: 'Bluda', name: 'Somsa', description: 'Guzali tandir somsa', price: 7000, image_url: 'assets/images/somsa.svg' },
-        { id: 26, category: 'Bluda', name: 'Farsh 1 kg', description: 'Farsh 1 kg', price: 140000, image_url: 'assets/images/farsh-1kg.jpg' },
+        { id: 1, category: 'Bluda', name: 'Balıq quwirdaq', description: '', price: 45000, image_url: 'assets/images/balyk-kuyrdak.svg' },
+        { id: 2, category: 'Bluda', name: 'Shashlik', description: '', price: 13000, image_url: 'assets/images/shashlik.svg' },
+        { id: 3, category: 'Bluda', name: 'Pigodi', description: '', price: 8000, image_url: 'assets/images/pigodi.svg' },
+        { id: 4, category: 'Bluda', name: 'Pirojki', description: '', price: 3000, image_url: 'assets/images/pirojki.svg' },
+        { id: 5, category: 'Bluda', name: 'Pisken Mayek', description: '', price: 2000, image_url: 'assets/images/pisken-mayek.svg' },
+        { id: 6, category: 'Bluda', name: 'Somsa', description: '', price: 7000, image_url: 'assets/images/somsa.svg' },
+        { id: 26, category: 'Bluda', name: 'Farsh 1 kg', description: '', price: 140000, image_url: 'assets/images/farsh-1kg.jpg' },
 
-        { id: 7, category: 'Zakuska', name: 'Svejiy Salat', description: 'Yangi sabzavotlardan tayyorlangan salat', price: 10000, image_url: 'assets/images/svejiy-salat.svg' },
-        { id: 8, category: 'Zakuska', name: 'Markovcha', description: 'Achchiqqina koreyscha sabzi salati', price: 5000, image_url: 'assets/images/markovcha.svg' },
-        { id: 9, category: 'Zakuska', name: 'Opke Xe', description: 'Anʼanaviy koreyscha xe salati', price: 10000, image_url: 'assets/images/opke-xe.svg' },
-        { id: 10, category: 'Zakuska', name: 'Kolbasa Set', description: 'Turli xil dudlangan kolbasalar to\'plami', price: 15000, image_url: 'assets/images/kolbasa-set.svg' },
-        { id: 11, category: 'Zakuska', name: 'Akarachka Set', description: 'Qovurilgan tovuq oyoqchalari', price: 20000, image_url: 'assets/images/akarachka-set.svg' },
-        { id: 12, category: 'Zakuska', name: 'Turak', description: 'Qovurilgan xamirli gazaklar', price: 5000, image_url: 'assets/images/turak.svg' },
-        { id: 13, category: 'Zakuska', name: 'Semechka Katta', description: 'Katta paket semechka', price: 15000, image_url: 'assets/images/semechka-katta.svg' },
-        { id: 14, category: 'Zakuska', name: 'Semechka Mini', description: 'Kichik paket semechka', price: 5000, image_url: 'assets/images/semechka-mini.svg' },
-        { id: 25, category: 'Zakuska', name: 'Baliq Xe', description: 'Baliq Xe', price: 10000, image_url: 'assets/images/opke-xe.svg' },
+        { id: 7, category: 'Zakuska', name: 'Svejiy Salat', description: '', price: 10000, image_url: 'assets/images/svejiy-salat.svg' },
+        { id: 8, category: 'Zakuska', name: 'Markovcha', description: '', price: 5000, image_url: 'assets/images/markovcha.svg' },
+        { id: 9, category: 'Zakuska', name: 'Opke Xe', description: '', price: 10000, image_url: 'assets/images/opke-xe.svg' },
+        { id: 10, category: 'Zakuska', name: 'Kolbasa Set', description: '', price: 15000, image_url: 'assets/images/kolbasa-set.svg' },
+        { id: 11, category: 'Zakuska', name: 'Akarachka Set', description: '', price: 20000, image_url: 'assets/images/akarachka-set.svg' },
+        { id: 12, category: 'Zakuska', name: 'Turak', description: '', price: 5000, image_url: 'assets/images/turak.svg' },
+        { id: 13, category: 'Zakuska', name: 'Semechka Katta', description: '', price: 15000, image_url: 'assets/images/semechka-katta.svg' },
+        { id: 14, category: 'Zakuska', name: 'Semechka Mini', description: '', price: 5000, image_url: 'assets/images/semechka-mini.svg' },
+        { id: 25, category: 'Zakuska', name: 'Baliq Xe', description: '', price: 10000, image_url: 'assets/images/opke-xe.svg' },
 
-        { id: 15, category: 'Ichimliklar', name: 'Pivo Razlivnoy', description: 'Muzdek razlivnoy pivo', price: 10000, image_url: 'assets/images/pivo-razlivnoy.svg' },
-        { id: 16, category: 'Ichimliklar', name: 'Pivo Kibray', description: 'Kibray pivosi (shisha)', price: 20000, image_url: 'assets/images/pivo-kibray.svg' },
-        { id: 17, category: 'Ichimliklar', name: 'Pivo Sarbast Light', description: 'Sarbast Light (shisha)', price: 25000, image_url: 'assets/images/pivo-sarbast-light.svg' },
-        { id: 18, category: 'Ichimliklar', name: 'Cola 1L', description: 'Coca-Cola 1 litr', price: 15000, image_url: 'assets/images/cola-1l.svg' },
-        { id: 19, category: 'Ichimliklar', name: 'Cola 1.5L', description: 'Coca-Cola 1.5 litr', price: 18000, image_url: 'assets/images/cola-15l.svg' },
-        { id: 20, category: 'Ichimliklar', name: 'Mineral 1.5L', description: 'Gazli mineral suv 1.5L', price: 7000, image_url: 'assets/images/mineral-15l.svg' },
-        { id: 21, category: 'Ichimliklar', name: 'Mineral 1L', description: 'Gazsiz mineral suv 1L', price: 5000, image_url: 'assets/images/mineral-1l.svg' },
-        { id: 24, category: 'Ichimliklar', name: 'Gazli ayron', description: 'Gazli ayron', price: 15000, image_url: 'assets/images/gazli-ayron.jpg' },
+        { id: 15, category: 'Ichimliklar', name: 'Pivo Razlivnoy', description: '', price: 10000, image_url: 'assets/images/pivo-razlivnoy.svg' },
+        { id: 16, category: 'Ichimliklar', name: 'Pivo Kibray', description: '', price: 20000, image_url: 'assets/images/pivo-kibray.svg' },
+        { id: 17, category: 'Ichimliklar', name: 'Pivo Sarbast Light', description: '', price: 25000, image_url: 'assets/images/pivo-sarbast-light.svg' },
+        { id: 18, category: 'Ichimliklar', name: 'Cola 1L', description: '', price: 15000, image_url: 'assets/images/cola-1l.svg' },
+        { id: 19, category: 'Ichimliklar', name: 'Cola 1.5L', description: '', price: 18000, image_url: 'assets/images/cola-15l.svg' },
+        { id: 20, category: 'Ichimliklar', name: 'Mineral 1.5L', description: '', price: 7000, image_url: 'assets/images/mineral-15l.svg' },
+        { id: 21, category: 'Ichimliklar', name: 'Mineral 1L', description: '', price: 5000, image_url: 'assets/images/mineral-1l.svg' },
+        { id: 24, category: 'Ichimliklar', name: 'Gazli ayron', description: '', price: 15000, image_url: 'assets/images/gazli-ayron.jpg' },
 
-        { id: 22, category: 'Extra', name: 'Kapchonnıy Balıq', description: 'Dudlangan maxsus baliq', price: 30000, image_url: 'assets/images/kapchyonny-balyk.svg' },
-        { id: 23, category: 'Extra', name: 'Zakrytii Vobla', description: 'Tozalangan quritilgan vobla', price: 30000, image_url: 'assets/images/zakrytii-vobla.svg' }
+        { id: 22, category: 'Extra', name: 'Kapchonnıy Balıq', description: '', price: 30000, image_url: 'assets/images/kapchyonny-balyk.svg' },
+        { id: 23, category: 'Extra', name: 'Zakrytii Vobla', description: '', price: 30000, image_url: 'assets/images/zakrytii-vobla.svg' }
     ];
 }
 
